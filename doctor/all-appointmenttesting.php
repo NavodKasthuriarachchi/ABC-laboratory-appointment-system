@@ -92,7 +92,7 @@ $appointments = $appointmentSystem->getAppointments();
                                             <td><?php echo htmlentities($row->MobileNumber); ?></td>
                                             <td><?php echo htmlentities($row->Email); ?></td>
                                             <td><?php echo ($row->Status == "") ? "Not Updated Yet" : htmlentities($row->Status); ?></td>
-                                            <td><?php echo htmlentities($row->Doctor); ?></td> <!-- Displaying Doctor's ID -->
+                                            <td><?php echo htmlentities($row->Doctor); ?></td>   
                                             <td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&amp;aptid=<?php echo htmlentities($row->AppointmentNumber); ?>" class="btn btn-primary">View</a></td>
                                         </tr>
                                         <?php

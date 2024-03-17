@@ -16,10 +16,8 @@ class AppointmentSystem {
     }
 
     public function getAppointments() {
-        $docid = $_SESSION['damsid'];
-        $sql = "SELECT * FROM tblappointment WHERE Doctor=:docid";
+        $sql = "SELECT * FROM tblappointmentp";
         $query = $this->db->prepare($sql);
-        $query->bindParam(':docid', $docid, PDO::PARAM_STR);
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
@@ -78,6 +76,7 @@ $appointments = $appointmentSystem->getAppointments();
                                         <th>Mobile Number</th>
                                         <th>Email</th>
                                         <th>Status</th>
+                                        <th>Doctor's ID</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -93,6 +92,7 @@ $appointments = $appointmentSystem->getAppointments();
                                             <td><?php echo htmlentities($row->MobileNumber); ?></td>
                                             <td><?php echo htmlentities($row->Email); ?></td>
                                             <td><?php echo ($row->Status == "") ? "Not Updated Yet" : htmlentities($row->Status); ?></td>
+                                            <td><?php echo htmlentities($row->Doctor); ?></td> Displaying Doctor's ID
                                             <td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&amp;aptid=<?php echo htmlentities($row->AppointmentNumber); ?>" class="btn btn-primary">View</a></td>
                                         </tr>
                                         <?php
@@ -108,6 +108,7 @@ $appointments = $appointmentSystem->getAppointments();
                                         <th>Mobile Number</th>
                                         <th>Email</th>
                                         <th>Status</th>
+                                        <th>Doctor's ID</th>
                                         <th>Action</th>
                                     </tr>
                                     </tfoot>

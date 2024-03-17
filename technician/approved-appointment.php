@@ -11,36 +11,30 @@ class ApprovedAppointmentDetail {
     }
 
     public function displayAppointmentDetails() {
-        if (strlen($_SESSION['damsid'] == 0)) {
-            header('location:logout.php');
-        } else {
-            $docid = $_SESSION['damsid'];
-            $sql = "SELECT * FROM tblappointment WHERE Status='Approved' AND Doctor=:docid";
-            $query = $this->dbh->prepare($sql);
-            $query->bindParam(':docid', $docid, PDO::PARAM_STR);
-            $query->execute();
-            $results = $query->fetchAll(PDO::FETCH_OBJ);
+        $sql = "SELECT * FROM tblappointmentp WHERE Status='Approved'";
+        $query = $this->dbh->prepare($sql);
+        $query->execute();
+        $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-            $cnt = 1;
-            if ($query->rowCount() > 0) {
-                foreach ($results as $row) {
+        $cnt = 1;
+        if ($query->rowCount() > 0) {
+            foreach ($results as $row) {
 ?>
-                    <tr>
-                        <td><?php echo htmlentities($cnt); ?></td>
-                        <td><?php echo htmlentities($row->AppointmentNumber); ?></td>
-                        <td><?php echo htmlentities($row->Name); ?></td>
-                        <td><?php echo htmlentities($row->MobileNumber); ?></td>
-                        <td><?php echo htmlentities($row->Email); ?></td>
-                        <?php if ($row->Status == "") { ?>
-                            <td><?php echo "Not Updated Yet"; ?></td>
-                        <?php } else { ?>
-                            <td><?php echo htmlentities($row->Status); ?></td>
-                        <?php } ?>
-                        <td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&&aptid=<?php echo htmlentities($row->AppointmentNumber); ?>" class="btn btn-primary">View</a></td>
-                    </tr>
+                <tr>
+                    <td><?php echo htmlentities($cnt); ?></td>
+                    <td><?php echo htmlentities($row->AppointmentNumber); ?></td>
+                    <td><?php echo htmlentities($row->Name); ?></td>
+                    <td><?php echo htmlentities($row->MobileNumber); ?></td>
+                    <td><?php echo htmlentities($row->Email); ?></td>
+                    <?php if ($row->Status == "") { ?>
+                        <td><?php echo "Not Updated Yet"; ?></td>
+                    <?php } else { ?>
+                        <td><?php echo htmlentities($row->Status); ?></td>
+                    <?php } ?>
+                    <td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&&aptid=<?php echo htmlentities($row->AppointmentNumber); ?>" class="btn btn-primary">View</a></td>
+                </tr>
 <?php
-                    $cnt = $cnt + 1;
-                }
+                $cnt = $cnt + 1;
             }
         }
     }

@@ -12,7 +12,7 @@ if (strlen($_SESSION['damsid']==0)) {
     $aptid=$_GET['aptid'];
     $status=$_POST['status'];
    $remark=$_POST['remark'];
-      $sql= "update tblappointment set Status=:status,Remark=:remark where ID=:eid";
+      $sql= "update tblappointmentp set Status=:status,Remark=:remark where ID=:eid";
     $query=$dbh->prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':remark',$remark,PDO::PARAM_STR);
@@ -73,7 +73,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 						<div class="table-responsive">
 							<?php
                   $eid=$_GET['editid'];
-$sql="SELECT * from tblappointment  where ID=:eid";
+$sql="SELECT * from tblappointmentp  where ID=:eid";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':eid', $eid, PDO::PARAM_STR);
 $query->execute();

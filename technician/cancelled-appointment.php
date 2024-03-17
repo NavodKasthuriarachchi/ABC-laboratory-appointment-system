@@ -11,29 +11,23 @@ class CancelledAppointmentDetail {
     }
 
     public function displayAppointmentDetails() {
-        if (strlen($_SESSION['damsid']) == 0) {
-            header('location:logout.php');
-        } else {
-            $docid = $_SESSION['damsid'];
-            $sql = "SELECT * FROM tblappointment WHERE Status='Cancelled' AND Doctor=:docid";
-            $query = $this->dbh->prepare($sql);
-            $query->bindParam(':docid', $docid, PDO::PARAM_STR);
-            $query->execute();
-            $results = $query->fetchAll(PDO::FETCH_OBJ);
+        $sql = "SELECT * FROM tblappointmentp WHERE Status='Cancelled'";
+        $query = $this->dbh->prepare($sql);
+        $query->execute();
+        $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-            $cnt = 1;
-            foreach ($results as $row) {
-                echo "<tr>";
-                echo "<td>" . htmlentities($cnt) . "</td>";
-                echo "<td>" . htmlentities($row->AppointmentNumber) . "</td>";
-                echo "<td>" . htmlentities($row->Name) . "</td>";
-                echo "<td>" . htmlentities($row->MobileNumber) . "</td>";
-                echo "<td>" . htmlentities($row->Email) . "</td>";
-                echo "<td>" . ($row->Status == "" ? "Not Updated Yet" : htmlentities($row->Status)) . "</td>";
-                echo "<td><a href='view-appointment-detail.php?editid=" . htmlentities($row->ID) . "&&aptid=" . htmlentities($row->AppointmentNumber) . "' class='btn btn-primary'>View</a></td>";
-                echo "</tr>";
-                $cnt++;
-            }
+        $cnt = 1;
+        foreach ($results as $row) {
+            echo "<tr>";
+            echo "<td>" . htmlentities($cnt) . "</td>";
+            echo "<td>" . htmlentities($row->AppointmentNumber) . "</td>";
+            echo "<td>" . htmlentities($row->Name) . "</td>";
+            echo "<td>" . htmlentities($row->MobileNumber) . "</td>";
+            echo "<td>" . htmlentities($row->Email) . "</td>";
+            echo "<td>" . ($row->Status == "" ? "Not Updated Yet" : htmlentities($row->Status)) . "</td>";
+            echo "<td><a href='view-appointment-detail.php?editid=" . htmlentities($row->ID) . "&&aptid=" . htmlentities($row->AppointmentNumber) . "' class='btn btn-primary'>View</a></td>";
+            echo "</tr>";
+            $cnt++;
         }
     }
 }
