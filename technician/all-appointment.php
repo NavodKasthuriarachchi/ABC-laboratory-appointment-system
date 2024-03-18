@@ -76,7 +76,8 @@ $appointments = $appointmentSystem->getAppointments();
                                         <th>Mobile Number</th>
                                         <th>Email</th>
                                         <th>Status</th>
-                                        <th>Doctor's ID</th>
+                                        <th>Reports</th>
+                                        <th>Email</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -92,7 +93,14 @@ $appointments = $appointmentSystem->getAppointments();
                                             <td><?php echo htmlentities($row->MobileNumber); ?></td>
                                             <td><?php echo htmlentities($row->Email); ?></td>
                                             <td><?php echo ($row->Status == "") ? "Not Updated Yet" : htmlentities($row->Status); ?></td>
-                                            <td><?php echo htmlentities($row->Doctor); ?></td> Displaying Doctor's ID
+                                            <td>
+                                                <!-- Link the Reports button to view-reports.php -->
+                                                <a href="view-reports.php?appointment_id=<?php echo htmlentities($row->ID); ?>" class="btn btn-info">Reports</a>
+                                            </td>
+                                            <td>
+                                                <!-- Link the Email button to index.php and pass email as a parameter -->
+                                                <a href="../email/index.php?email=<?php echo htmlentities($row->Email); ?>" class="btn btn-success">Email</a>
+                                            </td>
                                             <td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&amp;aptid=<?php echo htmlentities($row->AppointmentNumber); ?>" class="btn btn-primary">View</a></td>
                                         </tr>
                                         <?php
@@ -108,7 +116,8 @@ $appointments = $appointmentSystem->getAppointments();
                                         <th>Mobile Number</th>
                                         <th>Email</th>
                                         <th>Status</th>
-                                        <th>Doctor's ID</th>
+                                        <th>Reports</th>
+                                        <th>Email</th>
                                         <th>Action</th>
                                     </tr>
                                     </tfoot>
