@@ -16,10 +16,8 @@ class AppointmentPage {
     }
     
     public function displayAppointments() {
-        $docid = $_SESSION['damsid'];
-        $sql = "SELECT * FROM tblappointment WHERE Status IS NULL AND Doctor=:docid";
+        $sql = "SELECT * FROM tblappointmentp WHERE Status IS NULL";
         $query = $this->db->prepare($sql);
-        $query->bindParam(':docid', $docid, PDO::PARAM_STR);
         $query->execute();
         $results = $query->fetchAll(PDO::FETCH_OBJ);
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/dbconnection.php');
+include_once('includes/dbconnection.php');
 
 class Appointment {
     private $dbh;
@@ -8,7 +8,6 @@ class Appointment {
     public function __construct($dbh) {
         $this->dbh = $dbh;
     }
-
     public function bookAppointment($name, $mobnum, $email, $appdate, $aaptime, $specialization, $doctorlist, $message) {
         $cdate = date('Y-m-d');
 

@@ -10,7 +10,7 @@
         <div class="foldable">
           <?php
 $pid=$_SESSION['damsid'];
-$sql="SELECT FullName,Email from  tblpatient where ID=:pid";
+$sql="SELECT FullName,Email from  tbltechnician where ID=:pid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':pid',$pid,PDO::PARAM_STR);
 $query->execute();
@@ -71,24 +71,35 @@ $fname=$row->FullName;
             <span class="menu-text">Dashboard</span>
             
           </a>
-          <li>
-          <a href="docbooking.php">
-            <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
-            <span class="menu-text">Channel a doctor</span>
-          </a>
-          <a href="bookingtest.php">
-            <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
-            <span class="menu-text">Book a Lab Test</span>
-          </a>
-          <a href="appointment-bwdates.php">
-            <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
-            <span class="menu-text">View Channeling</span>
-          </a>
-          <a href="appointment-bwdates.php">
-            <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
-            <span class="menu-text">View Lab Tests</span>
-          </a>
+       
+        </li>
 
+       <li class="has-submenu">
+          <a href="javascript:void(0)" class="submenu-toggle">
+            <i class="menu-icon zmdi zmdi-pages zmdi-hc-lg"></i>
+            <span class="menu-text">Appointment</span>
+            <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
+          </a>
+          <ul class="submenu">
+            <li><a href="new-appointment.php"><span class="menu-text">New Appointment</span></a></li>
+            <li><a href="approved-appointment.php"><span class="menu-text">Approved Appointment</span></a></li>
+            <li><a href="cancelled-appointment.php"><span class="menu-text">Cancelled Appointment</span></a></li>
+            <li><a href="all-appointment.php"><span class="menu-text">All Appointment</span></a></li>
+           
+          </ul>
+        </li>
+        
+        <li>
+          <a href="search.php">
+            <i class="menu-icon zmdi zmdi-search zmdi-hc-lg"></i>
+            <span class="menu-text">Search</span>
+          </a>
+        </li>
+        <li>
+          <a href="appointment-bwdates.php">
+            <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
+            <span class="menu-text">Report</span>
+          </a>
         </li>
 
 

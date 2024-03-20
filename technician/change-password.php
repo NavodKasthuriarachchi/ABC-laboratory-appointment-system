@@ -17,7 +17,7 @@ if (strlen($_SESSION['damsid']) == 0) {
             exit();
         }
 
-        $sql = "SELECT ID FROM tblpatient WHERE ID=:pid AND Password=:ppassword";
+        $sql = "SELECT ID FROM tbltechnician WHERE ID=:pid AND Password=:ppassword";
         $query = $dbh->prepare($sql);
         $query->bindParam(':pid', $pid, PDO::PARAM_STR);
         $query->bindParam(':ppassword', $cpassword, PDO::PARAM_STR);
@@ -25,7 +25,7 @@ if (strlen($_SESSION['damsid']) == 0) {
         $results = $query->fetch(PDO::FETCH_ASSOC);
 
         if ($query->rowCount() > 0) {
-            $con = "UPDATE tblpatient SET Password=:newpassword WHERE ID=:pid";
+            $con = "UPDATE tbltechnician SET Password=:newpassword WHERE ID=:pid";
             $chngpwd1 = $dbh->prepare($con);
             $chngpwd1->bindParam(':pid', $pid, PDO::PARAM_STR);
             $chngpwd1->bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
@@ -43,7 +43,7 @@ if (strlen($_SESSION['damsid']) == 0) {
 <html lang="en">
 
 <head>
-    <title>ABC Patient - Change Password</title>
+    <title>ABC Technician - Change Password</title>
     <link rel="stylesheet" href="libs/bower/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="libs/bower/material-design-iconic-font/dist/css/material-design-iconic-font.css">
     <link rel="stylesheet" href="libs/bower/animate.css/animate.min.css">

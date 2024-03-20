@@ -10,13 +10,12 @@ class BetweenDatesReport {
         $this->db = $db;
     }
 
-    public function generateReport($fdate, $tdate, $docid) {
+    public function generateReport($fdate, $tdate) {
         $output = '';
-        $sql = "SELECT * FROM tblappointment WHERE (DATE(ApplyDate) BETWEEN :fdate AND :tdate) AND Doctor = :docid";
+        $sql = "SELECT * FROM tblappointmentp WHERE DATE(ApplyDate) BETWEEN :fdate AND :tdate";
         $query = $this->db->prepare($sql);
         $query->bindParam(':fdate', $fdate, PDO::PARAM_STR);
         $query->bindParam(':tdate', $tdate, PDO::PARAM_STR);
-        $query->bindParam(':docid', $docid, PDO::PARAM_STR);
         $query->execute();
         $results = $query->fetchAll(PDO::FETCH_OBJ);
 
@@ -44,7 +43,6 @@ if (strlen($_SESSION['damsid'] == 0)) {
     $betweenDatesReport = new BetweenDatesReport($dbh);
     $fdate = $_POST['fromdate'];
     $tdate = $_POST['todate'];
-    $docid = $_SESSION['damsid'];
 
     ?>
     <!DOCTYPE html>
@@ -106,7 +104,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php echo $betweenDatesReport->generateReport($fdate, $tdate, $docid); ?>
+                                            <?php echo $betweenDatesReport->generateReport($fdate, $tdate); ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
