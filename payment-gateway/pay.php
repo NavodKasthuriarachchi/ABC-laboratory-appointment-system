@@ -1,3 +1,26 @@
+<?php
+session_start();
+include('../includes/dbconnection.php');
+
+// Retrieve the test ID from the URL
+if(isset($_GET['test_id'])) {
+    $testID = $_GET['test_id'];
+
+    // Fetch test price from the database based on test ID
+    $sql = "SELECT price FROM tbltests WHERE ID = :testID";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':testID', $testID, PDO::PARAM_INT);
+    $stmt->execute();
+    $testPrice = $stmt->fetchColumn();
+    
+    // Concatenate "Rs." before the test price
+    $formattedPrice = 'Rs. ' . $testPrice;
+} else {
+    // If test ID not set, default test price to 0
+    $formattedPrice = 'Rs. 0';
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +42,11 @@
         <div class="row">
 
             <div class="col">
+                <h3 class="inputBox">
+                    <span>payable amount</span>
+                    <!-- Echoing the formatted test price into the input field -->
+                    <input type="text" placeholder="price" id="price" value="<?php echo htmlspecialchars($formattedPrice); ?>" readonly>
+                </h3>
 
                 <h3 class="title">billing address</h3>
 
@@ -52,7 +80,7 @@
 
             </div>
 
-            <div class="col">
+            <div class="col"><br>
 
                 <h3 class="title">payment</h3>
 

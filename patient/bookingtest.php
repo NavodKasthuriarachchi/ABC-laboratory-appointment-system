@@ -29,7 +29,7 @@ class Appointment {
 
             if ($query->execute()) {
                 echo '<script>alert("Your Booking Request Has Been Sent. We Will Contact You Soon")</script>';
-                echo "<script>window.location.href ='bookingtest.php'</script>";
+                echo "<script>window.location.href ='../payment-gateway/pay.php?test_id=$test'</script>";
             } else {
                 echo '<script>alert("Something Went Wrong. Please try again")</script>';
             }
@@ -108,7 +108,7 @@ if(isset($_POST['submit'])) {
             <div class="row">
                 <div class="col-lg-8 col-12 mx-auto">
                     <div class="booking-form">
-                        <h2 class="text-center mb-lg-3 mb-2">Book a Test appointment</h2>
+                        <h2 class="text-center mb-lg-3 mb-2">Book a Lab Test</h2>
                         <form role="form" method="post">
                             <div class="row">
                                 <div class="col-lg-6 col-12">

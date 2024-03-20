@@ -33,7 +33,7 @@
           </a>
         </li>
         <li>
-          <h5 class="page-title hidden-menubar-top hidden-float">Dashboard</h5>
+          <h5 class="page-title hidden-menubar-top hidden-float">Dashboard Technician</h5>
         </li>
       </ul>
 

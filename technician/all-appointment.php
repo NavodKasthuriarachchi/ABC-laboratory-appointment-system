@@ -99,7 +99,7 @@ $appointments = $appointmentSystem->getAppointments();
                                             </td>
                                             <td>
                                                 <!-- Link the Email button to index.php and pass email as a parameter -->
-                                                <a href="../email/index.php?email=<?php echo htmlentities($row->Email); ?>" class="btn btn-success">Email</a>
+                                                <a href="index.php?email=<?php echo htmlentities($row->Email); ?>" class="btn btn-success">Email</a>
                                             </td>
                                             <td><a href="view-appointment-detail.php?editid=<?php echo htmlentities($row->ID); ?>&amp;aptid=<?php echo htmlentities($row->AppointmentNumber); ?>" class="btn btn-primary">View</a></td>
                                         </tr>
