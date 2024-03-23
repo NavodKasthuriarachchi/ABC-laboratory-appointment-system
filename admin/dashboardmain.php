@@ -85,9 +85,9 @@ if (strlen($_SESSION['damsid']) == 0) {
         </div>
 		<br>
         <div class="col-auto mb-3" style="margin-right: 20px;"> <!-- Add custom margin-right here -->
-		<a href="">
+		<a href="../report/index.php">
             <button class="btn btn-success" style="padding: 50px 70px; background-color: #28a745; color: #ffffff;"> <!-- Add custom padding here -->
-                Doctors appointment details
+                Upload Test Reports
             </button>
         </div>
 		<br>
