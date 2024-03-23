@@ -186,7 +186,7 @@ if ($status=="" ){
 
    <select name="status" class="form-control wd-450" required="true" >
      <option value="Approved" selected="true">Approved</option>
-     <option value="Cancelled">Cancelled</option>
+     <!-- <option value="Cancelled">Cancelled</option> -->
      
    </select></td>
   </tr>
