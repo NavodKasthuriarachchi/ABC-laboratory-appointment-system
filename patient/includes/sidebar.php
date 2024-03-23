@@ -9,18 +9,19 @@
       <div class="media-body">
         <div class="foldable">
           <?php
-$pid=$_SESSION['damsid'];
-$sql="SELECT FullName,Email from  tblpatient where ID=:pid";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':pid',$pid,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
+            $pid=$_SESSION['damsid'];
+            $sql="SELECT FullName,Email from  tblpatient where ID=:pid";
+            $query = $dbh -> prepare($sql);
+            $query->bindParam(':pid',$pid,PDO::PARAM_STR);
+            $query->execute();
+            $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-foreach($results as $row)
-{    
-$email=$row->Email;   
-$fname=$row->FullName;     
-}   ?>
+            foreach($results as $row)
+            {    
+                $email=$row->Email;   
+                $fname=$row->FullName;     
+            }   
+          ?>
           <h5><a href="javascript:void(0)" class="username"><?php  echo $fname ;?></a></h5>
           <ul>
             <li class="dropdown">
@@ -71,27 +72,31 @@ $fname=$row->FullName;
             <span class="menu-text">Dashboard</span>
             
           </a>
-          <li>
+        </li>
+        <li>
           <a href="docbooking.php">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">Channel a doctor</span>
           </a>
-          <a href="bookingtest.php">
+        </li>
+        <li>
+          <a href="bookingtest.php?fullname=<?php echo urlencode($fname); ?>">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">Book a Lab Test</span>
           </a>
+        </li>
+        <li>
           <a href="appointment-bwdates.php">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">View Channeling</span>
           </a>
+        </li>
+        <li>
           <a href="appointment-bwdates.php">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">View Lab Tests</span>
           </a>
-
         </li>
-
-
       </ul><!-- .app-menu -->
     </div><!-- .menubar-scroll-inner -->
   </div><!-- .menubar-scroll -->
