@@ -80,9 +80,9 @@ $fname=$row->FullName;
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">Book a Lab Test</span>
           </a>
-          <a href="appointment-bwdates.php">
+          <a href="testresult.php">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
-            <span class="menu-text">View Channeling</span>
+            <span class="menu-text">Download Reports</span>
           </a>
           <a href="appointment-bwdates.php">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>

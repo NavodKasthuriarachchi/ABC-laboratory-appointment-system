@@ -54,7 +54,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#timeline">Timeline</a>
+                                <a class="nav-link" href="#Shedule:">Lets Start</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#reviews">Reviews</a>
                             </li>
 
                             <a class="navbar-brand d-none d-lg-block" href="index.html">
@@ -62,13 +66,9 @@
                                 <strong class="d-block">Health Service</strong>
                             </a>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="#reviews">Reviews</a>
-                            </li>
-
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="doctor/login.php">Doctor</a>
-                            </li>
+                            </li> -->
 
                             <li class="nav-item">
                                 <a class="nav-link" href="patient/login.php">Patient</a>
@@ -99,15 +99,15 @@
                             <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="images/slider/portrait-successful-mid-adult-doctor-with-crossed-arms.jpg" class="img-fluid" alt="">
+                                        <img src="images/slider/image3.jpg" class="img-fluid" alt="">
                                     </div>
 
                                     <div class="carousel-item">
-                                        <img src="images/slider/young-asian-female-dentist-white-coat-posing-clinic-equipment.jpg" class="img-fluid" alt="">
+                                        <img src="images/slider/image1.jpg" class="img-fluid" alt="">
                                     </div>
 
                                     <div class="carousel-item">
-                                        <img src="images/slider/doctor-s-hand-holding-stethoscope-closeup.jpg" class="img-fluid" alt="">
+                                        <img src="images/slider/image2.jpg" class="img-fluid" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -117,9 +117,9 @@
                                 <h1 class="mt-auto mb-2">
                                     Better
                                     <div class="animated-info">
-                                        <span class="animated-item">health</span>
-                                        <span class="animated-item">days</span>
-                                        <span class="animated-item">lives</span>
+                                        <span class="animated-item">Health</span>
+                                        <span class="animated-item">Days</span>
+                                        <span class="animated-item">Lives</span>
                                     </div>
                                 </h1>
 
@@ -142,9 +142,9 @@
                     <div class="row">
 
                         <div class="col-lg-6 col-md-6 col-12">
-                            <h2 class="mb-lg-3 mb-3">Meet Our Doctors</h2>
+                            <h2 class="mb-lg-3 mb-3">Celebrating 25 Years Of Service</h2>
 
-                            <p>Protect yourself and others by wearing masks and washing hands frequently. Outdoor is safer than indoor for gatherings or holding events. People who get sick with Coronavirus disease (COVID-19) will experience mild to moderate symptoms and recover without special treatments.</p>
+                            <p>With 25 years of expertise, our team has established itself as a leader in Healthcare industry. Our extensive experience ensures that we deliver exceptional service and solutions to our clients, setting new standards of excellence along the way.</p>
 
                             <p></p>
                         </div>
@@ -164,11 +164,11 @@
                     <div class="row">
 
                         <div class="col-lg-6 col-6 ps-0">
-                            <img src="images/gallery/medium-shot-man-getting-vaccine.jpg" class="img-fluid galleryImage" alt="get a vaccine" title="get a vaccine for yourself">
+                            <img src="images/gallery/image1.PNG" class="img-fluid galleryImage" alt="get a vaccine" title="get a vaccine for yourself">
                         </div>
 
                         <div class="col-lg-6 col-6 pe-0">
-                            <img src="images/gallery/female-doctor-with-presenting-hand-gesture.jpg" class="img-fluid galleryImage" alt="wear a mask" title="wear a mask to protect yourself">
+                            <img src="images/gallery/image4.jpg" class="img-fluid galleryImage" alt="wear a mask" title="wear a mask to protect yourself">
                         </div>
 
                     </div>
@@ -179,14 +179,16 @@
                 <div class="container">
                     <div class="row">
 
-                        <h2 class="text-center mb-lg-5 mb-4">Our Timeline</h2>
+                        <h2 class="text-center mb-lg-5 mb-4"></h2>
                         
                         <div class="timeline">
                             <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes">
                                 <div class="col-9 col-md-5 me-md-4 me-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                    <h3 class=" text-light">Get the vaccine</h3>
+                                    <h3 class=" text-light">Support and Security:</h3>
 
-                                    <p>Donec facilisis urna dui, a dignissim mauris pretium a. Quisque quis libero fermentum, tempus felis eu, consequat nibh.</p>
+                                    <p>For assistance with the system, patients can reach out to our support team. We prioritize the security and confidentiality of your medical information. Measures are in place to protect your personal data and medical test results.
+
+</p>
                                 </div>
 
                                 <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
@@ -194,15 +196,15 @@
                                 </div>
 
                                 <div class="col-9 col-md-5 ps-md-3 ps-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                    <time>2021-07-31 Saturday</time>
+                                    <time></time>
                                 </div>
                             </div>
 
                             <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes my-lg-5 my-4">
                                 <div class="col-9 col-md-5 ms-md-4 ms-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                    <h3 class=" text-light">Consulting your health</h3>
+                                    <h3 class=" text-light"> Accessing Your Reports:</h3>
 
-                                    <p>You are fully permitted to use this template for your commercial or personal website. You are not permitted to redistribute the template ZIP file for a download purpose on any other <a href="https://www.google.com/search?q=free+css" target="_blank">Free CSS collection</a> website.</p>
+                                    <p>Reports are generated automatically based on completed medical tests. Patients receive notifications when reports are ready for viewing. Access and download your generated medical reports directly from the patient portal.</p>
                                 </div>
 
                                 <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
@@ -210,15 +212,15 @@
                                 </div>
 
                                 <div class="col-9 col-md-5 pe-md-3 pe-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                    <time>2021-07-15 Thursday</time>
+                                    <time></time>
                                 </div>
                             </div>
 
                             <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes">
                                 <div class="col-9 col-md-5 me-md-4 me-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                    <h3 class=" text-light">Certified Nurses</h3>
+                                    <h3 class=" text-light">Managing Your Appointments:</h3>
 
-                                    <p>Phasellus eleifend, urna interdum congue viverra, arcu neque ultrices ligula, id pulvinar nisi nibh et lacus. Vivamus gravida, ipsum non euismod tincidunt, sapien elit fermentum mi, quis iaculis enim ligula at arcu.</p>
+                                    <p>Patients can manage their appointments within the patient portal. This includes options to modify or cancel upcoming appointments in case of schedule changes. Access details of past appointments, including test results and generated reports, for your records.</p>
                                 </div>
 
                                 <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
@@ -226,17 +228,17 @@
                                 </div>
 
                                 <div class="col-9 col-md-5 ps-md-3 ps-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                    <time>2021-06-28 Monday</time>
+                                    <time></time>
                                 </div>
                             </div>
 
-                            <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes my-lg-5 my-4">
+                            <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes my-lg-5 my-4" id="Shedule:">
                                 <div class="col-9 col-md-5 ms-md-4 ms-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                    <h3 class=" text-light">Covid-19 Hospitals</h3>
+                                    <h3 class=" text-light">Scheduling Your Appointment:</h3>
 
-                                    <p class="mb-0 pb-0">Fusce vestibulum euismod nulla sed ultrices. Praesent rutrum nulla vel sapien euismod, quis tempus dui placerat.</p>
+                                    <p class="mb-0 pb-0">Patients can schedule appointments for medical tests through the patient portal. </p>
                                     
-                                    <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla</p>
+                                    <p>This involves selecting the desired tests, specifying appointment dates and times, and providing necessary personal information. Review and confirm your appointment details to ensure accuracy.</p>
                                 </div>
 
                                 <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
@@ -244,15 +246,15 @@
                                 </div>
 
                                 <div class="col-9 col-md-5 pe-md-3 pe-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                    <time>2021-05-30 Sunday</time>
+                                    <time></time>
                                 </div>
                             </div>
 
-                            <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes">
+                            <div class="row g-0 justify-content-end justify-content-md-around align-items-start timeline-nodes" id="Introduction:">
                                 <div class="col-9 col-md-5 me-md-4 me-lg-0 order-3 order-md-1 timeline-content bg-white shadow-lg">
-                                    <h3 class=" text-light">Freelance Nursing</h3>
+                                    <h3 class=" text-light">Introduction:</h3>
 
-                                    <p>If you need a working contact form that submits email to your inbox, please <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">visit our contact page</a> for more information.</p>
+                                    <p>Welcome to the Patient Medical Test Appointment System! This guide is designed to help patients navigate the process of scheduling medical tests and accessing their reports. Whether you're new to the system or a returning patient, this guide will assist you in using our system effectively. <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">visit our contact page</a> for more information.</p>
                                 </div>
 
                                 <div class="col-3 col-sm-1 order-2 timeline-icons text-md-center">
@@ -260,7 +262,7 @@
                                 </div>
 
                                 <div class="col-9 col-md-5 ps-md-3 ps-lg-0 order-1 order-md-3 py-4 timeline-date">
-                                    <time>2021-05-18 Tuesday</time>
+                                    <time></time>
                                 </div>
                             </div>
                         </div>
@@ -289,14 +291,14 @@
 
                                     <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Best Health Care</strong></p>
 
-                                    <p class="reviews-text w-100">Phasellus ligula ante, tempus ac imperdiet ut, mattis ac nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                    <p class="reviews-text w-100">"This medical test appointment system is hands down the best I've ever used. The interface is incredibly intuitive, making it effortless to schedule appointments and access test reports. I appreciate the attention to detail and the seamless experience it provides. It has simplified managing my healthcare appointments."</p>
 
-                                    <img src="images/reviews/beautiful-woman-face-portrait-brown-background.jpeg" class="img-fluid reviews-image" alt="">
+                                    <img src="images/reviews/m2.jpeg" class="img-fluid reviews-image" alt="">
 
                                     <figcaption class="ms-4">
-                                        <strong>Marie</strong>
+                                        <strong>Pradeep Jayamaha</strong>
 
-                                        <span class="text-muted">Patient</span>
+                                        <span class="text-muted">New Client</span>
                                     </figcaption>
                                 </figure>
 
@@ -309,14 +311,14 @@
                                         <i class="bi-star"></i>
                                     </div>
 
-                                    <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Doctor cares everyone!</strong></p>
+                                    <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Staff cares everyone!</strong></p>
 
-                                    <p class="reviews-text w-100">Donec in elementum orci, nec posuere ligula. Quisque vulputate diam et ullamcorper ullamcorper. Pellentesque vestibulum neque at leo fermentum mattis.</p>
+                                    <p class="reviews-text w-100">"I've been using this system for years, and it continues to exceed my expectations. The user experience is top-notch, with a clean and intuitive interface that makes booking appointments a breeze. What truly sets it apart is the speed at which test reports are delivered. I've never had to wait long to access my results, which gives me peace of mind knowing I can stay on top of my health."</p>
 
-                                    <img src="images/reviews/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg" class="img-fluid reviews-image" alt="">
+                                    <img src="images/reviews/m3.jpeg" class="img-fluid reviews-image" alt="">
 
                                     <figcaption class="ms-4">
-                                        <strong>Ben Walker</strong>
+                                        <strong>Ramesh Fernando</strong>
 
                                         <span class="text-muted">Recovered</span>
                                     </figcaption>
@@ -333,14 +335,14 @@
 
                                     <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Great services!</strong></p>
 
-                                    <p class="reviews-text w-100">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec sit amet velit vitae purus aliquam efficitur.</p>
+                                    <p class="reviews-text w-100">"If you're looking for a reliable and efficient medical test appointment system, look no further. This system not only streamlines the booking process but also delivers test reports with impressive speed and accuracy. The convenience it offers is unmatched, and I've never encountered any issues while using it. Overall, it's an invaluable tool for anyone prioritizing their health."</p>
 
-                                    <img src="images/reviews/portrait-british-woman.jpeg" class="img-fluid reviews-image" alt="">
+                                    <img src="images/reviews/f2.jpeg" class="img-fluid reviews-image" alt="">
 
                                     <figcaption class="ms-4">
-                                        <strong>Laura Zono</strong>
+                                        <strong>Samudi Edirimanna</strong>
 
-                                        <span class="text-muted">New Patient</span>
+                                        <span class="text-muted">New Client</span>
                                     </figcaption>
                                 </figure>
 
@@ -353,16 +355,16 @@
                                         <i class="bi-star"></i>
                                     </div>
 
-                                    <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Best Advices</strong></p>
+                                    <p class="text-primary d-block mt-2 mb-0 w-100"><strong>Exceptional User-Friendly Design</strong></p>
 
-                                    <p class="reviews-text w-100">Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                                    <p class="reviews-text w-100">"I can't say enough good things about this medical test appointment system. From the moment I started using it, I knew I had found something special. The interface is incredibly user-friendly, making it easy to navigate even for those unfamiliar with technology. Booking appointments is quick and hassle-free, and the reports are delivered promptly. It's evident that the team behind this system truly cares about patient satisfaction."</p>
 
-                                    <img src="images/reviews/woman-wearing-mask-face-closeup-covid-19-green-background.jpeg" class="img-fluid reviews-image" alt="">
+                                    <img src="images/reviews/f1.PNG" class="img-fluid reviews-image" alt="">
 
                                     <figcaption class="ms-4">
-                                        <strong>Rosey</strong>
+                                        <strong>Sithumini Akarsha</strong>
 
-                                        <span class="text-muted"></span>
+                                        <span class="text-muted">New Client</span>
                                     </figcaption>
                                 </figure>
                                

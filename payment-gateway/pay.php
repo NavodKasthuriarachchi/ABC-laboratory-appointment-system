@@ -21,7 +21,6 @@ if(isset($_GET['test_id'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,12 +31,121 @@ if(isset($_GET['test_id'])) {
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/pay.css">
 
+    <script>
+        function formatCreditCardNumber(input) {
+            // Remove non-numeric characters from the input value
+            var sanitizedInput = input.value.replace(/\D/g, '');
+            
+            // Format the input value with hyphens after every fourth character
+            var formattedInput = '';
+            for (var i = 0; i < sanitizedInput.length; i++) {
+                if (i > 0 && i % 4 === 0) {
+                    formattedInput += '-';
+                }
+                formattedInput += sanitizedInput[i];
+            }
+            
+            // Update the input field value with the formatted value
+            input.value = formattedInput;
+        }
+
+        function validateForm() {
+            // Validation for full name
+            var fullName = document.getElementById("fullName").value;
+            var fullNameWords = fullName.split(' ').filter(function(word) {
+                return word.trim() !== '';
+            });
+            if (fullNameWords.length < 2) {
+                alert("Please enter your full name with at least two words");
+                return false;
+            }
+
+            // Validation for email
+            var email = document.getElementById("email").value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            // Validation for address
+            var address = document.getElementById("address").value;
+            var addressWords = address.split(' ').filter(function(word) {
+                return word.trim() !== '';
+            });
+            if (addressWords.length < 2) {
+                alert("Please enter your address with at least two words");
+                return false;
+            }
+
+            // Validation for city
+            var city = document.getElementById("city").value;
+            if (city == "") {
+                alert("Please enter your city");
+                return false;
+            }
+
+            // Validation for state
+            var state = document.getElementById("state").value;
+            if (state == "") {
+                alert("Please enter your state");
+                return false;
+            }
+
+            // Validation for zip code
+            var zipCode = document.getElementById("zipCode").value;
+            var zipCodeRegex = /^\d{5}$/; // Assuming zip code is 5 digits long
+            if (!zipCodeRegex.test(zipCode)) {
+                alert("Please enter a valid zip code");
+                return false;
+            }
+
+            // Validation for name on card
+            var nameOnCard = document.getElementById("nameOnCard").value;
+            if (nameOnCard == "") {
+                alert("Please enter the name on your card");
+                return false;
+            }
+
+            // Validation for credit card number
+            var creditCardNumber = document.getElementById("creditCardNumber").value;
+            var creditCardRegex = /^\d{4}-\d{4}-\d{4}-\d{4}$/; // Assuming credit card number format
+            if (!creditCardRegex.test(creditCardNumber)) {
+                alert("Please enter a valid credit card number");
+                return false;
+            }
+
+            // Validation for exp month
+            var expMonth = document.getElementById("expMonth").value;
+            if (expMonth == "") {
+                alert("Please enter the expiration month");
+                return false;
+            }
+
+            // Validation for exp year
+            var expYear = document.getElementById("expYear").value;
+            if (expYear == "") {
+                alert("Please enter the expiration year");
+                return false;
+            }
+
+            // Validation for CVV
+            var cvv = document.getElementById("cvv").value;
+            var cvvRegex = /^\d{3}$/; // Assuming CVV is 3 digits long
+            if (!cvvRegex.test(cvv)) {
+                alert("Please enter a valid CVV (3 digits)");
+                return false;
+            }
+
+            return true; // Form is valid
+        }
+    </script>
 </head>
 <body>
 
 <div class="container">
 
-    <form action="">
+    <form onsubmit="return validateForm()">
 
         <div class="row">
 
@@ -52,29 +160,29 @@ if(isset($_GET['test_id'])) {
 
                 <div class="inputBox">
                     <span>full name :</span>
-                    <input type="text" placeholder="Tharusha Navod">
+                    <input type="text" placeholder="Tharusha Navod" id="fullName">
                 </div>
                 <div class="inputBox">
                     <span>email :</span>
-                    <input type="email" placeholder="examplemail@gmail.com">
+                    <input type="email" placeholder="examplemail@gmail.com" id="email">
                 </div>
                 <div class="inputBox">
                     <span>address :</span>
-                    <input type="text" placeholder="room - street - locality">
+                    <input type="text" placeholder="room - street - locality" id="address">
                 </div>
                 <div class="inputBox">
                     <span>city :</span>
-                    <input type="text" placeholder="Colombo">
+                    <input type="text" placeholder="Colombo" id="city">
                 </div>
 
                 <div class="flex">
                     <div class="inputBox">
                         <span>state :</span>
-                        <input type="text" placeholder="Sri Lanka">
+                        <input type="text" placeholder="Sri Lanka" id="state">
                     </div>
                     <div class="inputBox">
                         <span>zip code :</span>
-                        <input type="text" placeholder="60540">
+                        <input type="text" placeholder="60540" id="zipCode">
                     </div>
                 </div>
 
@@ -90,35 +198,37 @@ if(isset($_GET['test_id'])) {
                 </div>
                 <div class="inputBox">
                     <span>name on card :</span>
-                    <input type="text" placeholder="mr. Tharusha Navod">
-                </div>
-                <div class="inputBox">
-                    <span>credit card number :</span>
-                    <input type="number" placeholder="1111-2222-3333-4444">
-                </div>
-                <div class="inputBox">
-                    <span>exp month :</span>
-                    <input type="text" placeholder="march">
-                </div>
-
-                <div class="flex">
+                    <input type="text" placeholder="mr. Tharusha Navod" id="nameOnCard">
+               
                     <div class="inputBox">
-                        <span>exp year :</span>
-                        <input type="number" placeholder="2024">
-                    </div>
-                    <div class="inputBox">
-                        <span>CVV :</span>
-                        <input type="text" placeholder="###">
-                    </div>
-                </div>
+    <span>credit card number :</span>
+    <input type="text" placeholder="1111-2222-3333-4444" id="creditCardNumber" oninput="formatCreditCardNumber(this)">
+</div>
+<div class="inputBox">
+    <span>exp month :</span>
+    <input type="text" placeholder="march" id="expMonth">
+</div>
 
-            </div>
+<div class="flex">
+    <div class="inputBox">
+        <span>exp year :</span>
+        <input type="text" placeholder="2024" id="expYear">
+    </div>
+    <div class="inputBox">
+        <span>CVV :</span>
+        <input type="text" placeholder="###" id="cvv">
+    </div>
+</div>
+
+</div>
     
-        </div>
+</div>
 
-        <input type="submit" value="proceed to checkout" class="submit-btn">
+</div>
 
-    </form>
+<input type="submit" value="proceed to checkout" class="submit-btn">
+
+</form>
 
 </div>    
     

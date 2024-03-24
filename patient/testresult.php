@@ -55,7 +55,7 @@ if(isset($_SESSION['damsid'])) {
 </head>
 <body>
 
-<div class="container mt-5">
+<div class="container mt-5" style="position: relative; top: 200px;">
     <h2>Uploaded Files</h2>
     <table class="table table-bordered table-striped">
         <thead>

@@ -38,8 +38,8 @@ class Appointment {
                 $query_insert_id->bindParam(':patient_id', $patient_id, PDO::PARAM_INT);
                 $query_insert_id->execute();
 
-                echo '<script>alert("Your Booking Request Has Been Sent. We Will Contact You Soon")</script>';
-                echo "<script>window.location.href ='bookingtest.php'</script>";
+                // Redirect to pay.php with test ID
+                echo "<script>window.location.href ='../payment-gateway/pay.php?test_id=$test'</script>";
             } else {
                 echo '<script>alert("Something Went Wrong. Please try again")</script>';
             }
@@ -130,7 +130,8 @@ if(isset($_POST['submit'])) {
                                                     <input type="date" name="date" id="date" value="" class="form-control">
                                                 </div>
                                                 <div class="col-lg-6 col-12">
-                                                    <input type="time" name="time" id="time" value="" class="form-control">
+                                                    <input type="time" name="time" id="
+                                                    time" value="" class="form-control">
                                                 </div>
                                                 <div class="col-lg-6 col-12">
                                                     <select onChange="gettests(this.value);" name="test" id="test" class="form-control" required>
