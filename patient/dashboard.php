@@ -65,7 +65,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
 		<br>
         <div class="col-auto mb-3" style="margin-right: 20px;"> <!-- Add custom margin-right here -->
 		<a href="testresult.php">
-            <button class="btn btn-success" style="padding: 50px 70px; background-color: #28a745; color: #ffffff;"> <!-- Add custom padding here -->
+            <button class="btn btn-success" style="padding: 50px 102px; background-color: #28a745; color: #ffffff;"> <!-- Add custom padding here -->
                 Download Reports
             </button>
         </div>

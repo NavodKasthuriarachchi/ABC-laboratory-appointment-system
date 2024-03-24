@@ -1,7 +1,14 @@
 <?php
 session_start();
-error_reporting(0);
 include('includes/dbconnection.php');
+
+$errors = array(
+    'fname' => '',
+    'mobno' => '',
+    'email' => '',
+    'password' => '',
+    'confirm_password' => ''
+);
 
 class SignupPatient {
     private $dbh;
@@ -11,37 +18,78 @@ class SignupPatient {
     }
 
     public function registerPatient() {
+        global $errors;
+
         if (isset($_POST['submit'])) {
             $fname = $_POST['fname'];
             $mobno = $_POST['mobno'];
             $email = $_POST['email'];
             $password = md5($_POST['password']);
+            $confirm_password = md5($_POST['confirm_password']);
 
-            $ret = "SELECT Email FROM tblpatient WHERE Email=:email";
-            $query = $this->dbh->prepare($ret);
-            $query->bindParam(':email', $email, PDO::PARAM_STR);
-            $query->execute();
-            $results = $query->fetchAll(PDO::FETCH_OBJ);
+            $this->validateForm($fname, $mobno, $email, $password, $confirm_password);
 
-            if ($query->rowCount() == 0) {
-                $sql = "INSERT INTO tblpatient(FullName, MobileNumber, Email, Password) VALUES (:fname, :mobno, :email, :password)";
-                $query = $this->dbh->prepare($sql);
-                $query->bindParam(':fname', $fname, PDO::PARAM_STR);
-                $query->bindParam(':email', $email, PDO::PARAM_STR);
-                $query->bindParam(':mobno', $mobno, PDO::PARAM_INT);
-                $query->bindParam(':password', $password, PDO::PARAM_STR);
-                $query->execute();
-                $lastInsertId = $this->dbh->lastInsertId();
-                
-                if ($lastInsertId) {
-                    echo "<script>alert('You have signed up successfully');</script>";
+            if (empty($errors['fname']) && empty($errors['mobno']) && empty($errors['email']) && empty($errors['password']) && empty($errors['confirm_password'])) {
+                if ($this->isEmailExists($email)) {
+                    $errors['email'] = "Email-id already exists. Please try again";
                 } else {
-                    echo "<script>alert('Something went wrong. Please try again');</script>";
+                    $sql = "INSERT INTO tblpatient(FullName, MobileNumber, Email, Password) VALUES (:fname, :mobno, :email, :password)";
+                    $query = $this->dbh->prepare($sql);
+                    $query->bindParam(':fname', $fname, PDO::PARAM_STR);
+                    $query->bindParam(':email', $email, PDO::PARAM_STR);
+                    $query->bindParam(':mobno', $mobno, PDO::PARAM_INT);
+                    $query->bindParam(':password', $password, PDO::PARAM_STR);
+                    $query->execute();
+                    $lastInsertId = $this->dbh->lastInsertId();
+                    
+                    if ($lastInsertId) {
+                        echo "<script>alert('You have signed up successfully');</script>";
+                    } else {
+                        echo "<script>alert('Something went wrong. Please try again');</script>";
+                    }
                 }
-            } else {
-                echo "<script>alert('Email-id already exists. Please try again');</script>";
             }
         }
+    }
+
+    private function validateForm($fname, $mobno, $email, $password, $confirm_password) {
+        global $errors;
+
+        if (empty($fname)) {
+            $errors['fname'] = "Full Name is required";
+        }
+
+        if (empty($mobno)) {
+            $errors['mobno'] = "Mobile Number is required";
+        } elseif (!preg_match("/^[0-9]{10}$/", $mobno)) {
+            $errors['mobno'] = "Invalid mobile number format";
+        }
+
+        if (empty($email)) {
+            $errors['email'] = "Email is required";
+        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = "Invalid email format";
+        }
+
+        if (empty($password)) {
+            $errors['password'] = "Password is required";
+        } elseif (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/", $_POST['password'])) {
+            $errors['password'] = "Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 8 characters long";
+        }
+
+        if ($password !== $confirm_password) {
+            $errors['confirm_password'] = "Passwords do not match";
+        }
+    }
+
+    private function isEmailExists($email) {
+        $ret = "SELECT Email FROM tblpatient WHERE Email=:email";
+        $query = $this->dbh->prepare($ret);
+        $query->bindParam(':email', $email, PDO::PARAM_STR);
+        $query->execute();
+        $results = $query->fetchAll(PDO::FETCH_OBJ);
+
+        return $query->rowCount() > 0;
     }
 }
 
@@ -75,32 +123,27 @@ $signupPatient->registerPatient();
             <form action="" method="post">
                 <div class="form-group">
                     <input id="fname" type="text" class="form-control" placeholder="Full Name" name="fname" required="true">
+                    <span style="color:red;"><?php echo $errors['fname']; ?></span>
                 </div>
                 <div class="form-group">
                     <input id="email" type="email" class="form-control" placeholder="Email" name="email" required="true">
+                    <span style="color:red;"><?php echo $errors['email']; ?></span>
                 </div>
                 <div class="form-group">
                     <input id="mobno" type="text" class="form-control" placeholder="Mobile" name="mobno" maxlength="10" pattern="[0-9]+" required="true">
+                    <span style="color:red;"><?php echo $errors['mobno']; ?></span>
                 </div>
-                <!-- <div class="form-group">
-                    <select class="form-control" name="specializationid">
-                        <option value="">Choose Specialization</option>
-                        <?php
-                        $sql1 = "SELECT * FROM tblspecialization";
-                        $query1 = $dbh->prepare($sql1);
-                        $query1->execute();
-                        $results1 = $query1->fetchAll(PDO::FETCH_OBJ);
-                        foreach ($results1 as $row1) {
-                            echo '<option value="' . htmlentities($row1->ID) . '">' . htmlentities($row1->Specialization) . '</option>';
-                        }
-                        ?>*/
-                    </select>
-                </div> -->
                 <div class="form-group">
                     <input id="password" type="password" class="form-control" placeholder="Password" name="password" required="true">
+                    <span style="color:red;"><?php echo $errors['password']; ?></span>
+                </div>
+                <div class="form-group">
+                    <input id="confirm_password" type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" required="true">
+                    <span style="color:red;"><?php echo $errors['confirm_password']; ?></span>
                 </div>
                 <input type="submit" class="btn btn-primary" value="Register" name="submit">
-            </form>
+           
+                </form>
         </div><!-- #login-form -->
 
         <div class="simple-page-footer">

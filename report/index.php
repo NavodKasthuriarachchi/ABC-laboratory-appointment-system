@@ -66,7 +66,7 @@ include('../includes/dbconnection.php');
                         $stmt = $dbh->query($sql);
                         $stmt->setFetchMode(PDO::FETCH_ASSOC);
                         while ($row = $stmt->fetch()) {
-                            echo '<option value="' . $row['AppointmentNumber'] . '">' . $row['ID'] . '</option>';
+                            echo '<option value="' . $row['AppointmentNumber'] . '">' . $row['AppointmentNumber'] . '</option>';
                         }
                         ?>
                     </select>

@@ -95,7 +95,7 @@ $appointments = $appointmentSystem->getAppointments();
                                             <td><?php echo ($row->Status == "") ? "Not Updated Yet" : htmlentities($row->Status); ?></td>
                                             <td>
                                                 <!-- Link the Reports button to view-reports.php -->
-                                                <a href="view-reports.php?appointment_id=<?php echo htmlentities($row->ID); ?>" class="btn btn-info">Reports</a>
+                                                <a href="../report/index.php?appointment_id=<?php echo htmlentities($row->ID); ?>" class="btn btn-info">Reports</a>
                                             </td>
                                             <td>
                                                 <!-- Link the Email button to index.php and pass email as a parameter -->
