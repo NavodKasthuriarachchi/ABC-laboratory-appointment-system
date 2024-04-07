@@ -95,10 +95,17 @@ $fname=$row->FullName;
             <span class="menu-text">Search</span>
           </a>
         </li>
+
         <li>
           <a href="appointment-bwdates.php">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">Report</span>
+          </a>
+        </li>
+        <li>
+          <a href="../pdf1/form.php">
+            <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
+            <span class="menu-text">Create Test Report</span>
           </a>
         </li>
 

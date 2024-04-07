@@ -61,7 +61,7 @@ if(isset($_POST['login'])) {
     <div class="simple-page-wrap">
         <div class="simple-page-logo animated swing">
             <span style="color: white"><i class="fa fa-gg"></i></span>
-            <span style="color: white">ABC Technician</span>
+            <span style="color: white">ABC Admin</span>
         </div><!-- logo -->
         <div class="simple-page-form animated flipInY" id="login-form">
             <h4 class="form-title m-b-xl text-center">Sign In With Your ABC Account</h4>

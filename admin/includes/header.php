@@ -18,7 +18,7 @@
       <span class="zmdi zmdi-hc-lg zmdi-search"></span>
     </button>
 
-    <a href="dashboard.php" class="navbar-brand">
+    <a href="dashboardmain.php" class="navbar-brand">
       <span class="brand-icon"><i class="fa fa-gg"></i></span>
       <span class="brand-name">ABC</span>
     </a>

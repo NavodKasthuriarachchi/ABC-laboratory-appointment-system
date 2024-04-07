@@ -66,7 +66,7 @@ $fname=$row->FullName;
     <div class="menubar-scroll-inner">
       <ul class="app-menu">
         <li class="has-submenu">
-          <a href="dashboard.php">
+          <a href="dashboardmain.php">
             <i class="menu-icon zmdi zmdi-view-dashboard zmdi-hc-lg"></i>
             <span class="menu-text">Dashboard</span>
             
@@ -81,8 +81,8 @@ $fname=$row->FullName;
             <i class="menu-caret zmdi zmdi-hc-sm zmdi-chevron-right"></i>
           </a>
           <ul class="submenu">
-            <li><a href="new-appointment.php"><span class="menu-text">New Appointment</span></a></li>
-            <li><a href="approved-appointment.php"><span class="menu-text">Approved Appointment</span></a></li>
+            <li><a href="testingdashboard.php"><span class="menu-text">Doctor's Appointment</span></a></li>
+            <li><a href="labtest/dashboard.php"><span class="menu-text">Lab Appointment</span></a></li>
             <li><a href="cancelled-appointment.php"><span class="menu-text">Cancelled Appointment</span></a></li>
             <li><a href="all-appointment.php"><span class="menu-text">All Appointment</span></a></li>
            
