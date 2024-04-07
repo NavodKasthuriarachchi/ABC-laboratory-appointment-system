@@ -84,7 +84,7 @@ $fname=$row->FullName;
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">Download Reports</span>
           </a>
-          <a href="appointment-bwdates.php">
+          <a href="search.php">
             <i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
             <span class="menu-text">View Lab Tests</span>
           </a>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/gutenberg-css@0.6">
+    <style>
+        table {
+            width: 100%;
+        }
+        footer {
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <img src="example.png"> -->
+    <h1>ABC Laboratory Test Report</h1>
+    <br><br>
+    <p>Appointment Number: {{ appointmentnumber }}</p>
+    <p>Name: {{ patient }}</p>
+    <p>Age: {{ age }}</p>
+    <br><br><br>
+    <table>
+        <thead>
+            <tr>
+                <th style="text-align: left">Test</th>
+                <!-- <th>Age</th> -->
+                <th style="text-align: center">Result</th>
+                <th style="text-align: right">Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td>{{ test }}</td>
+
+            
+                <!-- <td style="text-align: center">{{ age }}</td> -->
+           
+                
+                <td style="text-align: center">{{ result }}</td>
+            
+               
+                <td style="text-align: right">{{ quantity }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <footer>
+        <br><br><br><br>
+        <p style="text-align: right">Issued by</p>
+        <p style="text-align: right">{{ technician }}</p>
+        <p style="text-align: left">Contact us - 032 2545468</p>
+        <p style="text-align: left">ABC Laboratory PVT.LTD.</p>
+        <p style="text-align: left">132 B High Level Rd,</p>
+        <p style="text-align: left">Nugegoda.</p>
+        <p style="text-align: center">Better HEALTH And Better LIFE.</p>
+    </footer>
+    
+</body>
+</html>

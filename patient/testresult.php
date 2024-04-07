@@ -65,7 +65,7 @@ if(isset($_SESSION['damsid'])) {
             <th>File Type</th>
             <th>Upload Date</th>
             <th>Test</th>
-            <th>Patient</th>
+            <!-- <th>Patient</th> -->
             <th>Appointment Number</th>
             <th>Download</th>
         </tr>
@@ -83,7 +83,7 @@ if(isset($_SESSION['damsid'])) {
                     <td><?php echo $row['filetype']; ?></td>
                     <td><?php echo $row['upload_date']; ?></td>
                     <td><?php echo $row['test']; ?></td>
-                    <td><?php echo $row['patient']; ?></td>
+                    <!-- <td><?php echo $row['patient']; ?></td> -->
                     <td><?php echo $row['appointmentnumber']; ?></td>
                     <td><a href="<?php echo $file_path; ?>" class="btn btn-primary" download>Download</a></td>
                 </tr>

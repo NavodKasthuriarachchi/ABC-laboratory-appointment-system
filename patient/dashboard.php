@@ -71,7 +71,7 @@ if (strlen($_SESSION['damsid'] == 0)) {
         </div>
 		<br>
         <div class="col-auto mb-3" style="margin-right: 20px;">
-		<a href="">
+		<a href="search.php">
             <button class="btn btn-danger" style="padding: 50px 65px; background-color: #dc3545; color: #ffffff;"> <!-- Add custom padding here -->
 			 Lab Tests appointment details
             </button>
