@@ -66,9 +66,9 @@
                                 <strong class="d-block">Health Service</strong>
                             </a>
 
-                            <!-- <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" href="doctor/login.php">Doctor</a>
-                            </li> -->
+                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="patient/login.php">Patient</a>
@@ -436,12 +436,6 @@
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/scrollspy.min.js"></script>
         <script src="js/custom.js"></script>
-<!--
 
-TemplateMo 566 Medic Care
-
-https://templatemo.com/tm-566-medic-care
-
--->
     </body>
 </html>
